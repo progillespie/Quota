@@ -74,6 +74,8 @@ setwd(scriptdir)
 
 
 
+
+
 #-------------------------------------------------------------------
 # Define importing function import.dm() 
 #-------------------------------------------------------------------
@@ -81,6 +83,8 @@ setwd(scriptdir)
 source("functions/import.dm.R")
 
 #-------------------------------------------------------------------
+
+
 
 
 
@@ -94,6 +98,8 @@ source("functions/import.dm.R")
 source("functions/plot.ESTAT.R")
 
 #-------------------------------------------------------------------
+
+
 
 
 
@@ -131,6 +137,8 @@ Month.dates <- function(data){
 
 
 
+
+
 ###==================================================================
 ### Body 
 ### -- Downloading, importing, saving, and plotting
@@ -147,6 +155,7 @@ for.file.type <- "ppt"
 ##-------------------------------------------------------------------
 ## Agricultural Production
 ##-------------------------------------------------------------------
+
 
 #Cows'milk collection and products obtained - annual data
 # Units: Thousand tonnes
@@ -173,6 +182,8 @@ source("subscript//plots.1brq.R")
 
 
 
+
+
 #Production and utilization of milk on the farm - annual data
 # NOTE: for Milk Yield, Milk Feed
 # NON-GEO DATA DIMENSIONS:
@@ -194,6 +205,8 @@ data[, min(Year)]
 #  Start of series: 1960
 
 source("subscript//plots.1be7.R")
+
+
 
 
 
@@ -244,77 +257,14 @@ setkeyv(data, key.dims)
 data[, min(Month)] 
 #  Start of series: 1968-01-01
 
-#source("plots..R")
+source("subscript//plots.1aja.R")
 
-# Generate a plot
-subset.for.plot <- NULL # empty data object first
-subset.for.plot <- data[J("Cows' milk collected",
-                          "Fat content (% of product weight)"
-                          )]
-
-# Create repeating month and quarter variables
-subset.for.plot[, mm:=substr(Month, 6, 7)]
-setkey(subset.for.plot, "mm")
-subset.for.plot[c("01","02","03"), Q:="Q1"]
-subset.for.plot[c("04","05","06"), Q:="Q2"]
-subset.for.plot[c("07","08","09"), Q:="Q3"]
-subset.for.plot[c("10","11","12"), Q:="Q4"]
-  
-# # Protein not recorded on monthly basis for Ireland
-
-full.filepath <- file.path(outgraph,
-                           "fat_monthly.wmf",
-                           fsep="//"
-                          )  
-
-monthly.points.ESTAT(
-            subset.for.plot=subset.for.plot,
-            x="Month", y="Value", 
-            this.plot.title="Monthly Fat Content--Milk",
-               ylab="% of product weight",
-            full.filepath=full.filepath,
-            for.file.type=for.file.type,
-            col="Q",
-            palette=c("#fdae61", "#d7191c","#abd9e9", "#2c7bb6")
-                    )
+##-------------------------------------------------------------------
 
 
-#           palette=c("#a6cee3", "#1f78b4", "#b2df8a", "#33a02c")
 
 
-# Generate a plot
-subset.for.plot <- NULL #  empty data object first
-subset.for.plot <- data[J("Cows' milk collected",
-                          "Protein content (% of product weight)"
-                          )]
 
-# Create repeating month and quarter variables
-subset.for.plot[, mm:=substr(Month, 6, 7)]
-setkey(subset.for.plot, "mm")
-subset.for.plot[c("01","02","03"), Q:="Q1"]
-subset.for.plot[c("04","05","06"), Q:="Q2"]
-subset.for.plot[c("07","08","09"), Q:="Q3"]
-subset.for.plot[c("10","11","12"), Q:="Q4"]
- 
-# # Protein not recorded on monthly basis for Ireland
-
-full.filepath <- file.path(outgraph,
-                           "protein_monthly.wmf",
-                           fsep="//"
-                          )  
-
-
-monthly.points.ESTAT(
-            subset.for.plot=subset.for.plot,
-            x="Month", y="Value", 
-            this.plot.title=
-              "Monthly Protein Content--Milk",
-            ylab="% of product weight",
-            full.filepath=full.filepath,
-            for.file.type=for.file.type,
-            col="Q",
-            palette=c("#fdae61", "#d7191c","#abd9e9", "#2c7bb6")
-                    )
 
 
 
@@ -353,6 +303,9 @@ data[, min(Month)]
 #source("plots..R")
 
 
+
+
+
 #Land prices and rents - annual data
 # NON-GEO DATA DIMENSIONS:
 #        * Agricultural indicator
@@ -373,6 +326,10 @@ data[, min(Year)]
 #  Start of series: 1985
 
 #source("plots..R")
+
+
+
+
 
 #Purchase prices of the means of agricultural production (absolute 
 #  prices) - annual - old codes - data from 1969 to 2005"
@@ -397,6 +354,9 @@ data[, min(Year)]
 #  Start of series: 1969
 
 #source("plots..R")
+
+
+
 
 
 #Purchase prices of the means of agricultural production (absolute 
@@ -426,6 +386,9 @@ data[, min(Month)]
 #source("plots..R")
 
 
+
+
+
 #Selling prices of animal products (absolute prices) - annual - old 
 #  codes - data from 1969 to 2005
 # NON-GEO DATA DIMENSIONS:
@@ -450,6 +413,12 @@ data[, min(Year)]
 
 #source("plots..R")
 
+##-------------------------------------------------------------------
+
+
+
+
+
 
 
 
@@ -463,9 +432,15 @@ data[, min(Year)]
 
 
 
+
+
+
+
+
 ##-------------------------------------------------------------------
 ## Regional Agricultural Statistics
 ##-------------------------------------------------------------------
+
 
 #Land use by NUTS 2 regions
 # NON-GEO DATA DIMENSIONS:
@@ -485,6 +460,8 @@ data[, min(Year)]
 #  Start of series: 1974
 
 #source("plots..R")
+
+
 
 
 
@@ -511,6 +488,8 @@ data[, min(Year)]
 
 
 
+
+
 ##-------------------------------------------------------------------
 ## Unit value statistics for agricultural products
 ##-------------------------------------------------------------------
@@ -520,6 +499,9 @@ data[, min(Year)]
 ##-------------------------------------------------------------------
 
 
+
+
+
 ##-------------------------------------------------------------------
 ## Agricultural Labour Input Statistics
 ##-------------------------------------------------------------------
@@ -527,6 +509,8 @@ data[, min(Year)]
 # No historical data
 
 ##-------------------------------------------------------------------
+
+
 
 
 
@@ -540,9 +524,13 @@ data[, min(Year)]
 
 ##-------------------------------------------------------------------
 
+
+
 ###==================================================================
 ### End of Body
 ###==================================================================
+
+
 
 
 
