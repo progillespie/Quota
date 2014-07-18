@@ -6,10 +6,13 @@ Uses datamarket version of data (for convenience). Should be checked against dat
 
 master file is named, 
    
-   investigate_1984.R
+   --investigate_1984.R
 
-Subroutines in ./subscript              (just plotting instructions. Datamarket dataset ID's used in filenames)
-Custom functions in ./functions         (wrappers for importing and plotting called in subroutines)
+Subroutines in 
+   -- ./subscript              (just plotting instructions. Datamarket dataset ID's used in filenames)
+   
+Custom functions in 
+   -- ./functions         (wrappers for importing and plotting called in subroutines)
 
 
 Written using Rstudio, which is also handling Git. 
