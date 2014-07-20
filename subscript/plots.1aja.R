@@ -19,8 +19,8 @@ subset.for.plot[c("10","11","12"), Q:="Q4"]
 # # Protein not recorded on monthly basis for Ireland
 
 full.filepath <- file.path(outgraph,
-                           "fat_monthly.wmf",
-                           fsep="//"
+                           "fat_monthly.pdf",
+                           fsep="/"
                           )  
 
 monthly.points.ESTAT(
@@ -55,8 +55,8 @@ subset.for.plot[c("10","11","12"), Q:="Q4"]
 # # Protein not recorded on monthly basis for Ireland
 
 full.filepath <- file.path(outgraph,
-                           "protein_monthly.wmf",
-                           fsep="//"
+                           "protein_monthly.pdf",
+                           fsep="/"
                           )  
 
 

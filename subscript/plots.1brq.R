@@ -17,7 +17,7 @@ subset.for.plot <- NULL # empty data object first
 subset.for.plot <- 
   superset.for.plots[c("Cows' milk collected","Drinking milk")]
 
-full.filepath <- file.path(outgraph,"milk_prod.wmf", fsep="//")  
+full.filepath <- file.path(outgraph,"milk_prod.pdf", fsep="/")  
 
 multi.line.ESTAT(
             subset.for.plot=subset.for.plot,
@@ -36,7 +36,7 @@ subset.for.plot <- NULL # empty data object first
 subset.for.plot <- 
   superset.for.plots[c("Butter","Cheese")]
 
-full.filepath <- file.path(outgraph,"but_chs_prod.wmf", fsep="//")  
+full.filepath <- file.path(outgraph,"but_chs_prod.pdf", fsep="/")  
 
 multi.line.ESTAT(
             subset.for.plot=subset.for.plot,
@@ -54,7 +54,7 @@ subset.for.plot <- NULL # empty data object first
 subset.for.plot <- 
   superset.for.plots["Skimmed-milk powder"]
 
-full.filepath <- file.path(outgraph,"smp_prod.wmf", fsep="//")  
+full.filepath <- file.path(outgraph,"smp_prod.pdf", fsep="/")  
 
 line.ESTAT(
             subset.for.plot=subset.for.plot,
@@ -73,7 +73,7 @@ subset.for.plot <-
   data[c("Stock of butter",
          "Stock of skimmed-milk powder")]
 
-full.filepath <- file.path(outgraph,"but_smp_stocks.wmf", fsep="//")
+full.filepath <- file.path(outgraph,"but_smp_stocks.pdf", fsep="/")
 
 multi.line.ESTAT(
             subset.for.plot=subset.for.plot,

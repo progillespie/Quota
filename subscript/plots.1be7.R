@@ -20,8 +20,8 @@ subset.for.plot <-
   superset.for.plots[c("Dairy cows' milk","Cows' milk - Total")]
 
 full.filepath <- file.path(outgraph,
-                           "dairy_non_dy_milk.wmf",
-                           fsep="//"
+                           "dairy_non_dy_milk.pdf",
+                           fsep="/"
                           )  
 
 multi.line.ESTAT(
@@ -41,8 +41,8 @@ subset.for.plot <-
   superset.for.plots["Milk yield per dairy cow (kg of milk per year)"]
 
 full.filepath <- file.path(outgraph,
-                           "milk_yield.wmf",
-                           fsep="//"
+                           "milk_yield.pdf",
+                           fsep="/"
                           )  
 
 line.ESTAT(

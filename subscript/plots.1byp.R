@@ -9,8 +9,8 @@ subset.for.plot <- data[Year<time.UB,list(Year,Value,Item.of.milk)]
 levels(subset.for.plot$Item.of.milk) <- c("Fat", "Protein") 
 
 full.filepath <- file.path(outgraph,
-                           "fat_protein_annual.wmf",
-                           fsep="//"
+                           "fat_protein_annual.pdf",
+                           fsep="/"
                           )  
 
 multi.line.ESTAT(
